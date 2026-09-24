@@ -33,7 +33,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="roka project/systeam/main.cpp" />
+		<Unit filename="condition/roka project/systeam/main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
