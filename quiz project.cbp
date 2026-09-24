@@ -1,0 +1,74 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Question
+{
+    string question;
+    string choice1;
+    string choice2;
+    string choice3;
+    char correctAnswer;
+};
+
+int main()
+{
+    Question questions[2] =
+    {
+        {
+            "What does OOP stand for?",
+            "Object Oriented Programming",
+            "Only One Program",
+            "Open Output Protocol",
+            'a'
+        },
+
+        {
+            "Which keyword defines a class in C++?",
+            "function",
+            "class",
+            "struct only",
+            'b'
+        }
+    };
+
+    int score = 0;
+    char answer;
+
+    cout << "=== Quiz App ===" << endl;
+
+    for (int i = 0; i < 2; i++)
+    {
+        cout << "Q" << i + 1 << ": " << questions[i].question << endl;
+
+        cout << "a) " << questions[i].choice1 << endl;
+        cout << "b) " << questions[i].choice2 << endl;
+        cout << "c) " << questions[i].choice3 << endl;
+
+        cout << "Your answer: ";
+        cin >> answer;
+
+        while (answer != 'a' && answer != 'b' && answer != 'c')
+        {
+            cout << "Please enter a, b, or c: ";
+            cin >> answer;
+        }
+
+        if (answer == questions[i].correctAnswer)
+        {
+            cout << "Correct!" << endl;
+            score++;
+        }
+        else
+        {
+            cout << "Wrong! Correct answer: "
+                 << questions[i].correctAnswer << endl;
+        }
+    }
+
+    cout << "=== Quiz Complete ===" << endl;
+    cout << "Score: " << score << " / 2" << endl;
+
+    return 0;
+}
+```
